@@ -1,0 +1,10 @@
+---
+- name: Install Mapnik
+  apt: pkg={{ item }}
+       update_cache=yes
+       state=present
+  with_items:
+    - libmapnik2.2={{ mapnik_version }}
+    - libmapnik-dev={{ mapnik_version }}
+    - mapnik-utils={{ mapnik_version }}
+    - python-mapnik={{ mapnik_version }}
